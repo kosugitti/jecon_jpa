@@ -1,0 +1,136 @@
+\def\jabstractname{Abstract:}%%% 和文の概要部分の見出し文字列
+\def\eabstractname{Abstract:}%%%      欧文の概要部分の見出し文字列
+\long\def\jtitle#1{\def\@jtitle{#1}}
+\def\@jtitle{\@latex@error{No \noexpand\jtitle given}\@ehc}
+\long\def\etitle#1{\def\@etitle{#1}}
+\def\@etitle{\@latex@error{No \noexpand\etitle given}\@ehc}
+\def\jauthor#1{\def\@jauthor{#1}}
+\let\@jauthor\@empty
+\def\eauthor#1{\def\@eauthor{#1}}
+\let\@eauthor\@empty
+
+\def\KW#1{\def\@KW{#1}}
+\let\@KW\@empty
+
+
+\newbox\@jabstractbox  \global\setbox\@jabstractbox\box\voidb@x
+\newbox\@eabstractbox  \global\setbox\@eabstractbox\box\voidb@x
+
+\def\jabstract{%
+   \global\setbox\@jabstractbox\vbox\bgroup
+      \hsize\textwidth \@parboxrestore
+      \normalsize \leftskip=3zw \rightskip=3zw %%% 左右の余白の設定
+      \begingroup \centering
+      \bfseries \jabstractname%%% 和文概要の見出し文字列の整形
+      \par\endgroup
+      \vskip.25\baselineskip
+      \small%%% 和文概要の文字サイズ
+      \parindent=1zw\relax
+      }
+\def\endjabstract{\egroup}
+
+\def\eabstract{%
+   \global\setbox\@eabstractbox\vbox\bgroup
+      \hsize\textwidth \@parboxrestore
+      \normalsize \leftskip=3zw \rightskip=3zw %%%  左右の余白の設定
+      \begingroup \centering
+      \small\bfseries \eabstractname%%% 欧文概要の見出し文字列の整形
+      \par\endgroup
+      \vskip.25\baselineskip
+      \footnotesize%%% 欧文概要の文字サイズ
+      \parindent=1.5em\relax}
+\def\endeabstract{\egroup}
+
+\def\maketitle{%
+   \par
+   \begingroup
+   \def\thefootnote{\arabic{footnote}}%
+   \def\@makefnmark{\textsuperscript{\@thefnmark}}%
+   \long\def\@makefntext##1{%
+      \parindent 1zw
+      \noindent\hbox to2zw{\hss\textsuperscript{\@thefnmark}}##1}%
+   \if@twocolumn
+      \ifnum\col@number=\@ne
+         %%% \twocolumn のオプション引数の中で \maketitle が用いられた場合
+         \@maketitle
+      \else
+         %%% 2 段組時に \twocolumn のオプション引数の外で \maketitle を
+         %%% 用いた場合
+         \twocolumn[\@maketitle]%
+      \fi
+   \else%%% 1 段組の場合
+      \newpage
+      \global\@topnum\z@
+      \@maketitle
+   \fi
+   \@thanks
+   \endgroup
+   \setcounter{footnote}{0}%
+   \global\let\thanks\relax
+   \global\let\maketitle\relax
+   \global\let\p@thanks\relax
+   \global\let\@thanks\@empty
+   \global\let\@jauthor\@empty
+   \global\let\@eauthor\@empty
+   \global\let\@date\@empty
+   \global\let\@jtitle\@empty
+   \global\let\@etitle\@empty
+   \global\let\@KW\@empty
+   \global\let\jtitle\relax
+   \global\let\etitle\relax
+   \global\let\jauthor\relax
+   \global\let\eauthor\relax
+   \global\let\date\relax
+   \global\let\and\relax
+   }
+
+\def\@maketitle{%
+   \null\vskip\baselineskip
+   \begin{center}%
+
+      \let\footnote\thanks
+
+      {\LARGE\bfseries \@jtitle \par}%%% 和文タイトルの出力
+
+      \vskip.5\baselineskip
+
+      {
+      \large \lineskip1ex
+       \begin{tabular}[t]{c}
+          \@jauthor%%% 和文著者リストの出力
+       \end{tabular}\par
+      }
+
+      \setcounter{footnote}{0}%
+      \vskip\baselineskip
+
+      {\bfseries \@etitle \par}%%% 欧文タイトルの出力
+      \vskip.5\baselineskip
+
+      {
+      \normalsize\lineskip1ex
+       \begin{tabular}[t]{c}
+          \@eauthor%%% 欧文著者リストの出力
+       \end{tabular}\par
+      }%
+
+      \vskip.5\baselineskip
+      \ifvoid\@jabstractbox\else
+         \vskip.5\baselineskip
+         \unvbox\@jabstractbox%%% 和文概要の出力
+      \fi
+
+      \ifvoid\@eabstractbox\else
+         \vskip.5\baselineskip
+         \unvbox\@eabstractbox%%% 欧文概要の出力
+      \fi
+
+    \end{center}%
+
+    {\small
+     \parindent = 5zw
+      {\bf Keywords}: \@KW　%% キーワード出力
+    }
+
+
+   \vskip\baselineskip}
