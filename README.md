@@ -1,4 +1,4 @@
-# jecon-jpa.bst
+# jecon_jpa.bst
 
 心理学用bibtexスタイルファイル
 
