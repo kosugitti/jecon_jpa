@@ -413,7 +413,7 @@ FUNCTION {bst.notuse.order.field}
 % "Mr.A _ Mr.B " の "_" の部分に入る文字列
 %
 FUNCTION {bst.and}
-{ " \& " }    % (default)
+{ ", \& " }    % (default)
 
 %%% 三人以上の authors, editors の間の文字列
 %
