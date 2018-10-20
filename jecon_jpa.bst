@@ -891,7 +891,7 @@ FUNCTION {bst.publisher.pre}
 % publisher の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.post}
-{ " " }    % (default)
+{ ". " }    % (default)
 
 % publisher の前に付ける文字列 (日本語文献用)
 %
@@ -3255,11 +3255,11 @@ FUNCTION {output.publisher.address}
     { format.publisher "publisher" output.check.nocomma }
     % 日本語、英語で publisher と address の順序が逆
     { is.kanji.entry
-	{ format.publisher "publisher" output.check.nocomma
-	  format.address output.nocomma }
-	{ format.address output.nocomma
-	  format.publisher "publisher" output.check.nocomma }
-      if$
+			{ format.publisher "publisher" output.check.nocomma
+	  		format.address output.nocomma }
+			{ format.address output.nocomma
+	  		format.publisher "publisher" output.check.nocomma }
+    if$
     }
   if$
 }
