@@ -547,7 +547,7 @@ FUNCTION {bst.title.pre}
 % title の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.post}
-{ "," }    % (default)
+{ "." }    % (default)
 
 % title の前に付ける文字列 (日本語文献用)
 %
