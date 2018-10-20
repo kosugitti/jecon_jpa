@@ -547,7 +547,7 @@ FUNCTION {bst.title.pre}
 % title の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.post}
-{ "," }    % (default)
+{ "." }    % (default)
 
 % title の前に付ける文字列 (日本語文献用)
 %
@@ -557,7 +557,7 @@ FUNCTION {bst.title.pre.jp}
 % title の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.post.jp}
-{ "，" }    % (default)
+{ "．" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	book 用 title
@@ -863,7 +863,7 @@ FUNCTION {bst.month.post.jp}
 % address の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.address.pre}
-{ ", " }    % (default)
+{ ". " }    % (default)
 
 % address の後に付ける文字列 (英語文献用)
 %
@@ -1749,7 +1749,7 @@ FUNCTION {format.book}
     { "" }
     { is.kanji.entry
 	{ bst.book.pre.jp title * bst.book.post.jp * }
- 	{ bst.book.pre title * bst.book.post * }
+ 	{ bst.book.pre title * bst.book.post *}
       if$
     }
   if$
