@@ -1636,30 +1636,21 @@ FUNCTION {output.check.nocomma}
 % という形式で出力する。
 
 %%% period を付けて、改行する。
-%FUNCTION {fin.entry}
-%{ is.kanji.entry
-%    { add.kanji.period.x }
-%    { add.period.x }
-%  if$
-%  write$
-%  newline$
-%}
-
 FUNCTION {fin.entry}
-{note empty$
-	{ is.kanji.entry
-	    { add.kanji.period.x }
-	    { add.period.x }
-	  if$
-	  write$
-	  newline$
-	}
-	{ write$
-	  newline$
-	}if$
+{ is.kanji.entry
+    { add.kanji.period.x }
+    { add.period.x }
+  if$
+  write$
+  newline$
 }
 
-
+%%% periodをつけずに改行する　(add by Kosugi)
+FUNCTION {fin.entry.no.period}
+{
+	write$
+	newlines$
+}
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -3658,7 +3649,8 @@ FUNCTION {book}
   format.url.doi output.nocomma
   format.doi output.nocomma
   format.note output.nocomma
-  fin.entry
+
+  fin.entry.no.period
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
