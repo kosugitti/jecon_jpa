@@ -158,8 +158,8 @@ FUNCTION {bst.bysame.definition.jp}
 % Editor にも適用。日本語文献は関係なし。#0 か #1 か #2 を選択可。
 %
 FUNCTION {bst.author.name}
-{ #0 }    % (default)
-% { #1 }
+% { #0 }    % (default)
+ { #1 }
 % { #2 }
 
 % [#0 のケース] これ普通の経済学風。
