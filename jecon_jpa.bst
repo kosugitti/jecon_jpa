@@ -547,7 +547,7 @@ FUNCTION {bst.title.pre}
 % title の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.post}
-{ "." }    % (default)
+{ "," }    % (default)
 
 % title の前に付ける文字列 (日本語文献用)
 %
@@ -557,7 +557,7 @@ FUNCTION {bst.title.pre.jp}
 % title の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.post.jp}
-{ "．" }    % (default)
+{ "，" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	book 用 title
@@ -863,7 +863,7 @@ FUNCTION {bst.month.post.jp}
 % address の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.address.pre}
-{ ". " }    % (default)
+{ ", " }    % (default)
 
 % address の後に付ける文字列 (英語文献用)
 %
@@ -1636,14 +1636,30 @@ FUNCTION {output.check.nocomma}
 % という形式で出力する。
 
 %%% period を付けて、改行する。
+%FUNCTION {fin.entry}
+%{ is.kanji.entry
+%    { add.kanji.period.x }
+%    { add.period.x }
+%  if$
+%  write$
+%  newline$
+%}
+
 FUNCTION {fin.entry}
-{ is.kanji.entry
-    { add.kanji.period.x }
-    { add.period.x }
-  if$
-  write$
-  newline$
+{note empty$
+	{ is.kanji.entry
+	    { add.kanji.period.x }
+	    { add.period.x }
+	  if$
+	  write$
+	  newline$
+	}
+	{ write$
+	  newline$
+	}if$
 }
+
+
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -1749,7 +1765,7 @@ FUNCTION {format.book}
     { "" }
     { is.kanji.entry
 	{ bst.book.pre.jp title * bst.book.post.jp * }
- 	{ bst.book.pre title * bst.book.post *}
+ 	{ bst.book.pre title * bst.book.post * }
       if$
     }
   if$
@@ -3419,7 +3435,7 @@ FUNCTION {format.hoyakusho}
       jtitle empty$
         { "" * }
 %        { bst.touten.jp format.jtitle * bst.touten.jp *
-				 { ""  format.jtitle * bst.touten.jp *
+				 { ""  format.jtitle * "　" *
 				 remove.irrelevant.pre.kutoten * }
       if$
       jpublisher empty$
@@ -3641,7 +3657,6 @@ FUNCTION {book}
   format.hoyakusho output.nocomma
   format.url.doi output.nocomma
   format.doi output.nocomma
-
   format.note output.nocomma
   fin.entry
 }
