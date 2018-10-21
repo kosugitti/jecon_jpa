@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex sample"] 1540086513 "sample.aux" "sample.bbl" "sample" 1540086515
-  "./jecon_jpa.bst" 1540086507 140250 76ffc1751ec1eaeae8a5ca42b4cabe8e ""
-  "sample.aux" 1540086513 1223 ed9478d021f547733e0e8e95bc089fac ""
-  "sample.bib" 1540085904 4871 fed04959b1230cf754ad2004a0def4a6 ""
+["bibtex sample"] 1540094130 "sample.aux" "sample.bbl" "sample" 1540094132
+  "./jecon_jpa.bst" 1540093952 140249 56cf03fd06be118731ff943e8a67b695 ""
+  "sample.aux" 1540094131 1223 fef1396d6ff157a157717ddb5b39259c ""
+  "sample.bib" 1540093862 4871 fed04959b1230cf754ad2004a0def4a6 ""
   (generated)
   "sample.blg"
   "sample.bbl"
-["dvipdf"] 1540086514 "sample.dvi" "sample.pdf" "sample" 1540086515
-  "sample.dvi" 1540086513 3796 927db4d2ba9ebb7d523ccf04ab23b5ca "latex"
+["dvipdf"] 1540094131 "sample.dvi" "sample.pdf" "sample" 1540094132
+  "sample.dvi" 1540094131 3800 762318bd84922588753978b4ac1b933c "latex"
   (generated)
   "sample.pdf"
-["latex"] 1540086513 "sample.tex" "sample.dvi" "sample" 1540086515
+["latex"] 1540094131 "sample.tex" "sample.dvi" "sample" 1540094132
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1480098701 1292 21c1c5bfeaebccffdb478fd231a0997d ""
@@ -29,11 +29,11 @@
   "/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1529787343 59159 21c4d434b56837da0d2164489b3ea5f5 ""
   "/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1487977266 6061 1242b5308ecb0db77c71c1ff6c687ace ""
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
-  "/usr/local/texlive/2018/texmf-var/web2c/euptex/uplatex.fmt" 1538695581 4476416 5dd3b79ff27d217fc0f0d0dc4ea157a8 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/euptex/uplatex.fmt" 1540087593 4476417 72dde98c9682925bea8da21c612bc003 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "sample.aux" 1540086513 1223 ed9478d021f547733e0e8e95bc089fac ""
-  "sample.bbl" 1540086513 3879 b5978b9ebe675699ece692d429e43d7f "bibtex sample"
-  "sample.tex" 1540085904 538 a31ed2e6802d48b67af66d6c795a9e59 ""
+  "sample.aux" 1540094131 1223 fef1396d6ff157a157717ddb5b39259c ""
+  "sample.bbl" 1540094131 3879 caecb27e492eb39ef4d3498d643074a7 "bibtex sample"
+  "sample.tex" 1540093862 538 a31ed2e6802d48b67af66d6c795a9e59 ""
   (generated)
   "sample.log"
   "sample.aux"

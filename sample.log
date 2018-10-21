@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.10.5)  21 OCT 2018 10:48
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.10.21)  21 OCT 2018 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -151,32 +151,16 @@ LaTeX Font Info:    Font shape `JY2/mc/m/it' in size <10> not available
 (Font)              Font shape `JY2/mc/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 14.
-
-
-./sample.bbl:16: Package inputenc Error: Invalid UTF-8 byte 150.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16   (ッ�
-            レックマン.E.A.~濱治世・松山義則(監訳)(1998).家...
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
 ) [1
 
 ] (./sample.aux) ) 
 Here is how much of TeX's memory you used:
  1352 strings out of 493237
- 17507 string characters out of 6144379
+ 17507 string characters out of 6144378
  94032 words of memory out of 5000000
  5373 multiletter control sequences out of 15000+600000
  8679 words of font info for 44 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  23i,4n,20p,222b,167s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample.dvi (1 page, 3796 bytes).
+Output written on sample.dvi (1 page, 3800 bytes).

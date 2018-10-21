@@ -1649,7 +1649,7 @@ FUNCTION {fin.entry}
 FUNCTION {fin.entry.no.period}
 {
 	write$
-	newlines$
+	newline$
 }
 
 FUNCTION {new.block}
