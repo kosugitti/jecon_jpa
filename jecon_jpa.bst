@@ -460,7 +460,7 @@ FUNCTION {bst.cite.and.jp}
 % に略すときは #3 を指定。
 FUNCTION {bst.and.others.num}
 % { #3 }    % 3人以上なら省略する。(default)
- { #8 }
+ { #6 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%	author 名を略す際の文字列
@@ -557,7 +557,7 @@ FUNCTION {bst.title.pre.jp}
 % title の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.post.jp}
-{ "，" }    % (default)
+{ "　" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	book 用 title
@@ -863,7 +863,7 @@ FUNCTION {bst.month.post.jp}
 % address の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.address.pre}
-{ ", " }    % (default)
+{ ". " }    % (default)
 
 % address の後に付ける文字列 (英語文献用)
 %
@@ -873,7 +873,7 @@ FUNCTION {bst.address.post}
 % address の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.address.pre.jp}
-{ "，" }    % (default)
+{ "." }    % (default)
 
 % address の後に付ける文字列 (日本語文献用)
 %

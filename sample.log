@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.10.21)  21 OCT 2018 12:55
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2018.10.21)  21 OCT 2018 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -157,10 +157,10 @@ LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 Here is how much of TeX's memory you used:
  1352 strings out of 493237
  17507 string characters out of 6144378
- 94032 words of memory out of 5000000
+ 94035 words of memory out of 5000000
  5373 multiletter control sequences out of 15000+600000
  8679 words of font info for 44 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  23i,4n,20p,222b,167s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample.dvi (1 page, 3800 bytes).
+Output written on sample.dvi (1 page, 3756 bytes).
