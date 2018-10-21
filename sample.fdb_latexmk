@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex sample"] 1540108398 "sample.aux" "sample.bbl" "sample" 1540108400
-  "./jecon_jpa.bst" 1540108392 140247 7c14897ce4fb0236aca0c1146300eafe ""
-  "sample.aux" 1540108398 1226 a8682369d77963acafaeb43d74fd0c35 ""
-  "sample.bib" 1540107848 5146 ab981e48557fa79e4b380e2b20c03ccd ""
+["bibtex sample"] 1540111146 "sample.aux" "sample.bbl" "sample" 1540111148
+  "./jecon_jpa.bst" 1540111139 140251 37e88d785ae8736488da8275bf42ef33 ""
+  "sample.aux" 1540111147 1226 a8682369d77963acafaeb43d74fd0c35 ""
+  "sample.bib" 1540110476 5172 7273b56cf5b2c0543f094668b864bae2 ""
   (generated)
-  "sample.bbl"
   "sample.blg"
-["dvipdf"] 1540108399 "sample.dvi" "sample.pdf" "sample" 1540108400
-  "sample.dvi" 1540108398 3756 6aec4c10de1b32e686be4a2ccb639e5d "latex"
+  "sample.bbl"
+["dvipdf"] 1540111147 "sample.dvi" "sample.pdf" "sample" 1540111148
+  "sample.dvi" 1540111147 3768 c344d908a9ef0d8b3d54825c37f4972e "latex"
   (generated)
   "sample.pdf"
-["latex"] 1540108398 "sample.tex" "sample.dvi" "sample" 1540108400
+["latex"] 1540111147 "sample.tex" "sample.dvi" "sample" 1540111148
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1480098701 1292 21c1c5bfeaebccffdb478fd231a0997d ""
@@ -31,10 +31,10 @@
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
   "/usr/local/texlive/2018/texmf-var/web2c/euptex/uplatex.fmt" 1540087593 4476417 72dde98c9682925bea8da21c612bc003 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "sample.aux" 1540108398 1226 a8682369d77963acafaeb43d74fd0c35 ""
-  "sample.bbl" 1540108398 3865 9e8e8254af18cfedc5efb114bbd8a649 "bibtex sample"
+  "sample.aux" 1540111147 1226 a8682369d77963acafaeb43d74fd0c35 ""
+  "sample.bbl" 1540111147 3857 785bc2d0726662c2d6a5c23fe50b0b8d "bibtex sample"
   "sample.tex" 1540108372 539 1990da210413b7296013461bf5670479 ""
   (generated)
-  "sample.log"
-  "sample.aux"
   "sample.dvi"
+  "sample.aux"
+  "sample.log"

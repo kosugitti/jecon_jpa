@@ -678,7 +678,7 @@ FUNCTION {bst.translator.post.jp}
 % edition の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.edition.pre}
-{ ", " }    % (default)
+{ "" }    % (default)
 
 % edition の後に付ける文字列 (英語文献用)
 %
@@ -792,12 +792,12 @@ FUNCTION {bst.incpages.pre}
 
 % page の前に付ける文字列 (英語文献用)
 FUNCTION {bst.incpage.pre}
-{ ". p. " }
+{ " p. " }
 % { ": " }
 
 % page の後に付ける文字列 (複数ページ) (英語文献用)
 FUNCTION {bst.incpages.post}
-{ "." }
+{ "" }
 
 % page の後に付ける文字列 (英語文献用)
 FUNCTION {bst.incpage.post}
@@ -805,11 +805,11 @@ FUNCTION {bst.incpage.post}
 
 % page の前に付ける文字列 (日本語文献用)
 FUNCTION {bst.incpage.pre.jp}
-{ "\hspace{.5zw} (pp. " }
+{ "pp. " }
 
 % page の後に付ける文字列 (日本語文献用)
 FUNCTION {bst.incpage.post.jp}
-{ ")" }
+{ "" }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3714,10 +3714,14 @@ FUNCTION {incollection}
 
   format.in.ed.booktitle "booktitle" output.check.nocomma
   format.bvolume output.nocomma
-	% publisherの前
-	format.chapter.pages output.nocomma
+
+	% publisherの前におく
+	"(" * format.edition output.nocomma
+
+	format.chapter.pages * ")" output.nocomma
+
+
   output.address.organization.publisher
-  format.edition output.nocomma
 
   bst.year.position #0 = not
     { format.year "year" output.check.nocomma }
