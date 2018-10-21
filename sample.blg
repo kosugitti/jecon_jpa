@@ -1,0 +1,64 @@
+This is upBibTeX, Version 0.99d-j0.33-u1.23 (utf8.uptex) (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: sample.aux
+The style file: jecon_jpa.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+newlines$ is an unknown function---line 1652 of file jecon_jpa.bst
+Reallocated glb_str_ptr (elt_size=4) to 30 items from 20.
+Reallocated global_strs (elt_size=20001) to 30 items from 20.
+Reallocated glb_str_end (elt_size=4) to 30 items from 20.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: sample.bib
+Reallocated wiz_functions (elt_size=4) to 12000 items from 9000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 15 entries,
+            10057 wiz_defined-function locations,
+            1913 strings with 15592 characters,
+and the built_in function-call counts, 23802 in all, are:
+= -- 3797
+> -- 461
+< -- 38
++ -- 167
+- -- 144
+* -- 945
+:= -- 2982
+add.period$ -- 6
+call.type$ -- 15
+change.case$ -- 106
+chr.to.int$ -- 19
+cite$ -- 15
+duplicate$ -- 672
+empty$ -- 1329
+format.name$ -- 254
+if$ -- 6493
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 56
+num.names$ -- 109
+pop$ -- 399
+preamble$ -- 1
+purify$ -- 159
+quote$ -- 0
+skip$ -- 2231
+stack$ -- 0
+substring$ -- 2118
+swap$ -- 97
+text.length$ -- 54
+text.prefix$ -- 55
+top$ -- 0
+type$ -- 162
+warning$ -- 0
+while$ -- 111
+width$ -- 0
+write$ -- 241
+is.kanji.str$ -- 564
+(There was 1 error message)

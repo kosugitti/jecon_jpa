@@ -644,7 +644,7 @@ FUNCTION {bst.editor}
 % editor を表す文字列 (日本語文献用)
 %
 FUNCTION {bst.editor.jp}
-{ "（編）" }    % (default)
+{ "(編)" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	kanyaku (監訳者)
@@ -657,7 +657,7 @@ FUNCTION {bst.kanyaku.pre.jp}
 % kanyaku の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.kanyaku.post.jp}
-{ "（監訳）" }    % (default)
+{ "(監訳)" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	translator (翻訳者)
@@ -670,7 +670,7 @@ FUNCTION {bst.translator.pre.jp}
 % translator の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.translator.post.jp}
-{ "（訳）" }    % (default)
+{ "(訳)" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	edition
@@ -1065,12 +1065,12 @@ FUNCTION {bst.access.post}
 % accessの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.pre.jp}
-{ "（アクセス日: " } % (default)
+{ "(アクセス日: " } % (default)
 
 % accessの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.post.jp}
-{ "）" }    % (default)
+{ ")" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %       DOI (digital object identifier)
@@ -1119,10 +1119,10 @@ FUNCTION {bst.url.doi}
 %	邦訳書
 
 FUNCTION {bst.hoyakusho.pre.jp}
-{ "（" }    % (default)
+{ "(" }    % (default)
 
 FUNCTION {bst.hoyakusho.post.jp}
-{ "）" }    % (default)
+{ ")" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -3649,7 +3649,6 @@ FUNCTION {book}
   format.url.doi output.nocomma
   format.doi output.nocomma
   format.note output.nocomma
-
   fin.entry.no.period
 }
 
