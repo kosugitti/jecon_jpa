@@ -634,12 +634,12 @@ FUNCTION {bst.journal.post.jp}
 % 複数 editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editors}
-{ " (eds.) " }    % (default)
+{ "(eds.)" }    % (default)
 
 % 一人の editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editor}
-{ " (ed.) " }    % (default)
+{ "(Ed.)" }    % (default)
 
 % editor を表す文字列 (日本語文献用)
 %
@@ -747,7 +747,7 @@ FUNCTION {bst.number.post.jp}
 % In (英語文献用)
 %
 FUNCTION {bst.in}
-{ " in " }    % (default)
+{ " In " }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	page
