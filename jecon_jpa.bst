@@ -565,7 +565,7 @@ FUNCTION {bst.title.post.jp}
 % book の title 前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.pre}
-{ " \textit{ " }    % (default)
+{ "\textit{" }    % (default)
 
 % book の title 後に付ける文字列 (英語文献用)
 %
@@ -588,7 +588,7 @@ FUNCTION {bst.book.post.jp}
 % booktitle の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.btitle.pre}
-{ " \textit{ " }    % (default)
+{ "\textit{" }    % (default)
 
 % booktitle の後に付ける文字列 (英語文献用)
 %
@@ -611,7 +611,7 @@ FUNCTION {bst.btitle.post.jp}
 % journal name の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.journal.pre}
-{ " \textit{ " }    % (default)
+{ "\textit{ " }    % (default)
 
 % journal name の後に付ける文字列 (英語文献用)
 %
@@ -683,7 +683,7 @@ FUNCTION {bst.edition.pre}
 % edition の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.edition.post}
-{ " edition" }    % (default)
+{ " ed." }    % (default)
 
 % edition の前に付ける文字列 (日本語文献用)
 %
@@ -1119,7 +1119,7 @@ FUNCTION {bst.url.doi}
 %	邦訳書
 
 FUNCTION {bst.hoyakusho.pre.jp}
-{ " （" }    % (default)
+{ "（" }    % (default)
 
 FUNCTION {bst.hoyakusho.post.jp}
 { "）" }    % (default)
@@ -3744,7 +3744,7 @@ FUNCTION {incollection}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  fin.entry.no.period
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
