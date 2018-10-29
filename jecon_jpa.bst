@@ -502,14 +502,14 @@ FUNCTION {bst.author.post.jp}
 % (姓名のどちらか一方が一文字のケース)
 %
 FUNCTION {bst.sei.mei.one.jp}
-{ "" }    % (default)
+{ "　" }    % (default)
 % { "　" }
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列
 % (姓・名とも二文字以上のケース)
 %
 FUNCTION {bst.sei.mei.two.jp}
-{ "" }    % (default)
+{ "　" }    % (default)
 % { " " }
 
 
@@ -1119,10 +1119,20 @@ FUNCTION {bst.url.doi}
 %	邦訳書
 
 FUNCTION {bst.hoyakusho.pre.jp}
-{ "(" }    % (default)
+{ " （" }    % (default)
 
 FUNCTION {bst.hoyakusho.post.jp}
-{ ")" }    % (default)
+{ "）" }    % (default)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% add by Kosugitti
+%	genchoKANA 原著者名カタカナ表記
+
+FUNCTION {bst.genchoKANA.pre.jp}
+{ "" }    % (default)
+
+FUNCTION {bst.genchoKANA.post.jp}
+{ "　" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1286,6 +1296,7 @@ ENTRY
     % 以下は普通の bst ファイルでは利用されないフィールド
     jauthor jkanyaku jtitle jpublisher jyear
     order absorder translator kanyaku
+		genchoKANA
   }
 
   % 以下，エントリー変数の定義．エントリー変数とは，文献エントリー別に異なっ
@@ -3393,12 +3404,13 @@ FUNCTION {format.institution}
 
 %%% hoyakusho の整形
 FUNCTION {format.hoyakusho}
-{ jauthor empty$
+{ genchoKANA empty$
+	jauthor empty$
   jkanyaku empty$
   jtitle empty$
   jpublisher empty$
   jyear empty$
-  and and and and
+  and and and and and
     { "" }
     {
       is.kanji.entry
@@ -3406,6 +3418,7 @@ FUNCTION {format.hoyakusho}
         { ". " }
       if$
       bst.hoyakusho.pre.jp *
+			bst.genchoKANA.pre.jp * genchoKANA fomat.names * bst.genchoKANA.post.jp *
       jauthor empty$
         { jkanyaku empty$
             { "" * }
