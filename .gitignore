@@ -10,3 +10,8 @@
 .bbl
 .aux
 .DS_Store
+sample.log
+sample.blg
+sample.fls
+sample.fdb_latexmk
+sample.dvi
