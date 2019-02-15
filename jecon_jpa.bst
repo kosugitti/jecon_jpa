@@ -891,7 +891,7 @@ FUNCTION {bst.publisher.pre}
 % publisher の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.post}
-{ ". " }    % (default)
+{ "" }    % (default)
 
 % publisher の前に付ける文字列 (日本語文献用)
 %
@@ -1132,7 +1132,7 @@ FUNCTION {bst.genchoKANA.pre.jp}
 { "" }    % (default)
 
 FUNCTION {bst.genchoKANA.post.jp}
-{ "　" }    % (default)
+{ "  " }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1296,7 +1296,7 @@ ENTRY
     % 以下は普通の bst ファイルでは利用されないフィールド
     jauthor jkanyaku jtitle jpublisher jyear
     order absorder translator kanyaku
-		genchoKANA
+	genchoKANA
   }
 
   % 以下，エントリー変数の定義．エントリー変数とは，文献エントリー別に異なっ
@@ -3174,7 +3174,8 @@ FUNCTION {format.chapter.pages}
   if$
 }
 
-%%% editor and booktitle の整形。
+%%% editor and title の整形。
+
 FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
@@ -3405,20 +3406,22 @@ FUNCTION {format.institution}
 %%% hoyakusho の整形
 FUNCTION {format.hoyakusho}
 { genchoKANA empty$
-	jauthor empty$
+  jauthor empty$
   jkanyaku empty$
   jtitle empty$
   jpublisher empty$
   jyear empty$
-  and and and and and
+  and and and and and 
     { "" }
     {
       is.kanji.entry
         { bst.touten.jp }
-        { ". " }
+        { "." }
       if$
+
       bst.hoyakusho.pre.jp *
-			bst.genchoKANA.pre.jp * genchoKANA fomat.names * bst.genchoKANA.post.jp *
+			bst.genchoKANA.pre.jp * genchoKANA format.names * bst.genchoKANA.post.jp *
+
       jauthor empty$
         { jkanyaku empty$
             { "" * }
