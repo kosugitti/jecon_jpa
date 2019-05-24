@@ -683,7 +683,7 @@ FUNCTION {bst.edition.pre}
 % edition の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.edition.post}
-{ " ed." }    % (default)
+{ " ed" }    % (default)
 
 % edition の前に付ける文字列 (日本語文献用)
 %
