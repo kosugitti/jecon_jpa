@@ -2,6 +2,8 @@
 
 心理学用bibtexスタイルファイル
 
+**last updated 2019/05/24**
+
 ## 概要
 
 このファイルはTeXを使って心理学系論文を書くときに，引用文献を[日本心理学会（編）執筆・投稿の手引](https://psych.or.jp/wp-content/uploads/2017/09/tebiki20151019_fixed_compress.pdf)に記載されているフォーマットに沿って出力するためのスタイルファイルです。
