@@ -254,9 +254,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -281,22 +279,92 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -309,20 +377,21 @@ $(document).ready(function () {
 </div>
 
 
-<div id="jecon-jpa.bst" class="section level1">
-<h1>jecon-jpa.bst</h1>
+<div id="jecon_jpa.bst" class="section level1">
+<h1>jecon_jpa.bst</h1>
 <p>心理学用bibtexスタイルファイル</p>
-<div class="section level2">
+<p><strong>last updated 2019/05/24</strong></p>
+<div id="section" class="section level2">
 <h2>概要</h2>
 <p>このファイルはTeXを使って心理学系論文を書くときに，引用文献を<a href="https://psych.or.jp/wp-content/uploads/2017/09/tebiki20151019_fixed_compress.pdf">日本心理学会（編）執筆・投稿の手引</a>に記載されているフォーマットに沿って出力するためのスタイルファイルです。</p>
 <p>このスタイルファイルを使うと，次のような出力結果が得られます。上記手引きのP.40での出力と比較してください。</p>
-<div class="section level5">
+<div id="section-1" class="section level5">
 <h5>サンプルの出力</h5>
 <ul>
 <li><a href="sample.pdf">sample.pdf</a></li>
 </ul>
 </div>
-<div class="section level5">
+<div id="section-2" class="section level5">
 <h5>ソースコード</h5>
 <ul>
 <li><a href="sample.tex">sample.tex</a></li>
@@ -330,20 +399,20 @@ $(document).ready(function () {
 </ul>
 </div>
 </div>
-<div class="section level2">
+<div id="section-3" class="section level2">
 <h2>謝辞</h2>
 <p>このファイルは，様々な先人の貢献の上に成り立っています。</p>
 <ul>
-<li>武田史郎先生のjeconの設定を変えるだけで，ほとんど対応できてしまいます。本当にありがとうございます。記して謝意を表します。</li>
-<li>jeconはこちらの<a href="https://github.com/ShiroTakeda/jecon-bst">githubサイト</a>で公開されています。</li>
-<li>jecon-jpaはjeconのver 5.4を元にしています。</li>
+<li><p>武田史郎先生のjeconの設定を変えるだけで，ほとんど対応できてしまいます。本当にありがとうございます。記して謝意を表します。</p></li>
+<li><p>jeconはこちらの<a href="https://github.com/ShiroTakeda/jecon-bst">githubサイト</a>で公開されています。</p></li>
+<li><p>jecon-jpaはjeconのver 5.4を元にしています。</p></li>
 <li><p>jeconの元になった様々なスタイルファイルの作者にも同様の感謝を。</p></li>
-<li>心理学用の設定にするのに奥村泰之先生の設定，関数を一部拝借しています。</li>
-<li><a href="http://blue.zero.jp/yokumura/texpsychology.html">奥村先生のサイト</a>に元のbeta_jecon2スタイルがあります。</li>
+<li><p>心理学用の設定にするのに奥村泰之先生の設定，関数を一部拝借しています。</p></li>
+<li><p><a href="http://blue.zero.jp/yokumura/texpsychology.html">奥村先生のサイト</a>に元のbeta_jecon2スタイルがあります。</p></li>
 <li><p>特にincollection(本の中の特定の章)の引用の改変は参考になりました。ありがとうございました。</p></li>
 </ul>
 </div>
-<div class="section level2">
+<div id="section-4" class="section level2">
 <h2>使い方</h2>
 <p>こちらで公開しているスタイルファイルは，uplatexに対応しています。 また，bibファイルの著者名は，{姓,名}の形で記述するようにしています。ここはjeconの設定部分を使うことで，{名,姓}や{姓 名}の形でにすることも可能です。</p>
 <p>詳しくはスタイルファイル冒頭部の解説をお読みください。 また，もし不具合や問題点がありましたら，このサイトでIssueをあげていただくか，プルリクを投げていただくか，<span class="citation">@kosugitti</span> までご連絡ください。</p>
