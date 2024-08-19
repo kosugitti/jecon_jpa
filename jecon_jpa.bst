@@ -1,5 +1,8 @@
 % jecon_jpa.bst: 心理学用 BibTeX style file.
 %
+% 　　　　　　　2024/08/16   modified by @Tsukka-CogSci
+% 　「手引き」2022年版 (≒ APA7) 準拠に改変
+% 
 % 　　　　　　　2018/10/08   modified by @kosugitti
 %
 % 　これは武田史郎先生のjeconを心理学用に小杉が設定，変更したものです。
@@ -175,6 +178,13 @@ FUNCTION {bst.author.name}
 % second author 以下は「名 姓」とするという場合が多いが、これを変更するための関数。
 % Editor にも適用。日本語文献は関係なし。#0 か #1 か #2 を選択可。
 %
+
+% added by YT
+% editorの名前は逆順にするので，処理を分ける
+FUNCTION {bst.editor.name}
+% { #0 }    % (default)
+% { #1 }
+{ #2 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -459,8 +469,8 @@ FUNCTION {bst.cite.and.jp}
 % 何人以上の著者がいるときに引用部分で et al.で省略するか。3人以上のとき
 % に略すときは #3 を指定。
 FUNCTION {bst.and.others.num}
-% { #3 }    % 3人以上なら省略する。(default)
- { #6 }
+ { #3 }    % 3人以上なら省略する。(default)
+% { #6 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%	author 名を略す際の文字列
@@ -502,15 +512,15 @@ FUNCTION {bst.author.post.jp}
 % (姓名のどちらか一方が一文字のケース)
 %
 FUNCTION {bst.sei.mei.one.jp}
-{ "　" }    % (default)
-% { "　" }
+% { "　" }    % (default)
+{ " " }
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列
 % (姓・名とも二文字以上のケース)
 %
 FUNCTION {bst.sei.mei.two.jp}
-{ "　" }    % (default)
-% { " " }
+% { "　" }    % (default)
+{ " " }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -634,7 +644,7 @@ FUNCTION {bst.journal.post.jp}
 % 複数 editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editors}
-{ "(eds.)" }    % (default)
+{ "(Eds.)" }    % (default)
 
 % 一人の editor を表す文字列 (英語文献用)
 %
@@ -678,12 +688,12 @@ FUNCTION {bst.translator.post.jp}
 % edition の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.edition.pre}
-{ "" }    % (default)
+{ " (" }    % (default)
 
 % edition の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.edition.post}
-{ " ed" }    % (default)
+{ " ed.)" }    % (default)
 
 % edition の前に付ける文字列 (日本語文献用)
 %
@@ -788,11 +798,11 @@ FUNCTION {bst.page.post.jp}
 
 % page の前に付ける文字列 (複数ページ) (英語文献用)
 FUNCTION {bst.incpages.pre}
-{ " pp. " }
+{ "pp. " }
 
 % page の前に付ける文字列 (英語文献用)
 FUNCTION {bst.incpage.pre}
-{ " p. " }
+{ "p. " }
 % { ": " }
 
 % page の後に付ける文字列 (複数ページ) (英語文献用)
@@ -803,14 +813,21 @@ FUNCTION {bst.incpages.post}
 FUNCTION {bst.incpage.post}
 { "" }
 
+% page の前に付ける文字列 (複数ページ) (日本語文献用)
+FUNCTION {bst.incpages.pre.jp}
+{ "pp. " }
+
 % page の前に付ける文字列 (日本語文献用)
 FUNCTION {bst.incpage.pre.jp}
-{ "pp. " }
+{ "p. " }
+
+% page の後に付ける文字列 (複数ページ) (日本語文献用)
+FUNCTION {bst.incpages.post.jp}
+{ "" }
 
 % page の後に付ける文字列 (日本語文献用)
 FUNCTION {bst.incpage.post.jp}
 { "" }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	chapter
@@ -862,23 +879,23 @@ FUNCTION {bst.month.post.jp}
 %	address
 % address の前に付ける文字列 (英語文献用)
 %
-FUNCTION {bst.address.pre}
-{ ". " }    % (default)
+% FUNCTION {bst.address.pre}
+% { ". " }    % (default)
 
 % address の後に付ける文字列 (英語文献用)
 %
-FUNCTION {bst.address.post}
-{ "" }    % (default)
+% FUNCTION {bst.address.post}
+% { "" }    % (default)
 
 % address の前に付ける文字列 (日本語文献用)
 %
-FUNCTION {bst.address.pre.jp}
-{ "." }    % (default)
+% FUNCTION {bst.address.pre.jp}
+% { "." }    % (default)
 
 % address の後に付ける文字列 (日本語文献用)
 %
-FUNCTION {bst.address.post.jp}
-{ "" }    % (default)
+% FUNCTION {bst.address.post.jp}
+% { "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	publisher
@@ -886,12 +903,12 @@ FUNCTION {bst.address.post.jp}
 % publisher の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.pre}
-{ ": " }    % (default)
+{ ". " }    % (default)
 
 % publisher の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.post}
-{ "" }    % (default)
+{ "." }    % (default)
 
 % publisher の前に付ける文字列 (日本語文献用)
 %
@@ -901,7 +918,7 @@ FUNCTION {bst.publisher.pre.jp}
 % publisher の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.publisher.post.jp}
-{ " " }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	series
@@ -1028,7 +1045,7 @@ FUNCTION {bst.show.url}
 % URLの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.url.pre}
-{ ", URL: \url{" }	% (default)
+{ " from \url{" }	% (default)
 
 % URLの後に付ける文字列 (英語文献用)
 %
@@ -1038,7 +1055,7 @@ FUNCTION {bst.url.post}
 % URLの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.pre.jp}
-{ "，URL：\url{" }	% (default)
+{ " from \url{" }	% (default)
 
 % URLの後に付ける文字列 (日本語文献用)
 %
@@ -1055,7 +1072,7 @@ FUNCTION {bst.url.post.jp}
 % accessの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.access.pre}
-{ ", accessed on " } % (default)
+{ ". Retrieved " } % (default)
 
 % accessの後に付ける文字列 (英語文献用)
 %
@@ -1065,12 +1082,12 @@ FUNCTION {bst.access.post}
 % accessの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.pre.jp}
-{ "(アクセス日: " } % (default)
+{ ". Retrieved " } % (default)
 
 % accessの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.post.jp}
-{ ")" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %       DOI (digital object identifier)
@@ -1085,7 +1102,7 @@ FUNCTION {bst.show.doi}
 % DOIの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.doi.pre}
-{ ", DOI: \url{http://dx.doi.org/" } % (default)
+{ ". \url{http://doi.org/" } % (default)
 
 % DOIの後に付ける文字列 (英語文献用)
 %
@@ -1095,7 +1112,7 @@ FUNCTION {bst.doi.post}
 % DOIの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.doi.pre.jp}
-{ "，DOI：\url{http://dx.doi.org/" } % (default)
+{ ". \url{http://doi.org/" } % (default)
 
 % DOIの後に付ける文字列 (日本語文献用)
 %
@@ -1111,9 +1128,9 @@ FUNCTION {bst.doi.post.jp}
 % #2 -> DOI のみ表示
 %
 FUNCTION {bst.url.doi}
-{ #0 }    % (default) -> 両方表示
+% { #0 }    % (default) -> 両方表示
 % { #1 }    % -> URL のみ表示
-% { #2 }    % -> DOI のみ表示
+{ #2 }    % -> DOI のみ表示
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	邦訳書
@@ -1132,7 +1149,7 @@ FUNCTION {bst.genchoKANA.pre.jp}
 { "" }    % (default)
 
 FUNCTION {bst.genchoKANA.post.jp}
-{ "  " }    % (default)
+{ "　" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1804,11 +1821,17 @@ FUNCTION {set.alphabet.in.author}
 % 日本語の場合 1 文字が 2 文字と判断されることに注意。
 FUNCTION {count.number.of.letters}
 { 'sss :=
-   sss text.length$ #2 =
-      % 一文字のケースでは "1" を返す。
-      { "1" }
-      % 一文字以外のケースでは "0" を返す。
+   sss text.length$
+   #0 =
+      % 一文字のケースでは "0" を返す。
       { "0" }
+      { sss text.length$ #2 <
+          % 一文字のケースでは "1" を返す。
+          { "1" }
+          % 一文字以外のケースでは "2" を返す。
+          { "2" }
+        if$
+      }
    if$
 }
 
@@ -1839,9 +1862,9 @@ FUNCTION {format.names}
                 { s nameptr "{ll}" format.name$ 'ss :=
                   s nameptr "{ff}" format.name$ 'tt := }
               if$
-              ss "" =
+              tt count.number.of.letters "0" =
                 %% 姓のみのケースはそのまま
-                { tt 't := }
+                { ss 't := }
                 %% 姓・名ともにあるケース
                 { ss count.number.of.letters "1" =
                   tt count.number.of.letters "1" = or
@@ -1986,9 +2009,9 @@ FUNCTION {format.names.alt}
                 { s nameptr "{ll}" format.name$ 'ss :=
                   s nameptr "{ff}" format.name$ 'tt := }
               if$
-              ss "" =
+              tt count.number.of.letters "0" =
                 %% 姓のみのケースはそのまま
-                { tt 't := }
+                { ss 't := }
                 %% 姓・名ともにあるケース
                 { ss count.number.of.letters "1" =
                   tt count.number.of.letters "1" = or
@@ -2341,19 +2364,159 @@ FUNCTION {format.editors.alt}
 }
 
 %%% format.in.ed.booktitle 用
+
+% added by YT
+FUNCTION {format.names.ed}
+{ 's :=
+  % nameptr に 1 を代入
+  #1 'nameptr :=
+  % numnames に author (editor) の数を代入
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+  % namesleft が 0 より大なら繰り返し (while)
+  { namesleft #0 > }
+    % s に日本語含むか？
+    { s check.kanji.str
+        % 日本語含むケースの処理
+        { nameptr 'name.num :=
+          s set.alphabet.in.author
+          alphabet.in.author #0 =
+            % first nameが日本語のケース（日本人名ということ）
+
+            % 注：日本語の author は "姓 名" の順で指定されるが、bst では
+            % 順番通りに姓＝first name、名＝last name として扱われる。
+            { bst.sei.mei.order #0 =
+                { s nameptr "{ff}" format.name$ 'ss :=
+                  s nameptr "{ll}" format.name$ 'tt := }
+                % 普通と逆順のケース
+                { s nameptr "{ll}" format.name$ 'ss :=
+                  s nameptr "{ff}" format.name$ 'tt := }
+              if$
+              tt count.number.of.letters "0" =
+                %% 姓のみのケースはそのまま
+                { ss 't := }
+                %% 姓・名ともにあるケース
+                { ss count.number.of.letters "1" =
+                  tt count.number.of.letters "1" = or
+                    { ss bst.sei.mei.one.jp * tt * 't := }
+                    { ss bst.sei.mei.two.jp * tt * 't := }
+                  if$
+                }
+              if$
+            }
+            % first name が alphabet のケース (つまり、カタカナの外国人名)
+            { nameptr #1 =
+               % first author のケース (last name - first name の order)
+               { bst.editor.name #0 =
+                 bst.editor.name #1 = or
+                   % Last name - first name
+                   { s nameptr "{ll}" format.name$ 'ss :=
+                     s nameptr "{ff}" format.name$ 'tt :=
+                     ss bst.touten.jp * tt * 't := }
+                   % First name - Last name
+                   { s nameptr "{ff~}{ll}" format.name$ 't := }
+                 if$
+               }
+               % first author 以外のケース (first name - last name の order)
+               { bst.editor.name #0 =
+                 bst.editor.name #2 = or
+                   % First name - Last name
+                   { s nameptr "{ff~}{ll}" format.name$ 't := }
+                   % Last name - First name
+                   { s nameptr "{ll}" format.name$ 'ss :=
+                     s nameptr "{ff}" format.name$ 'tt :=
+                     ss bst.touten.jp * tt * 't := }
+                 if$
+               }
+              if$
+            }
+          if$
+        }
+        % author に日本語含まないケースの処理
+        { nameptr #1 =
+           % 一番目の author
+	   { bst.editor.name #0 =
+	     bst.editor.name #1 =
+	     or
+	        { bst.first.name.initial #0 =
+		   { s nameptr "{vv~}{ll}{, ff}{, jj}" format.name$ 't := }
+		   { s nameptr "{vv~}{ll}{, f.}{, jj}" format.name$ 't := }
+		  if$
+		}
+	        { bst.first.name.initial #0 =
+	           { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't := }
+	           { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't := }
+		  if$
+		}
+	     if$
+	   }
+           % 二番目以降の author
+	   { bst.editor.name #0 =
+	     bst.editor.name #2 =
+	     or
+	        { bst.first.name.initial #0 =
+                   { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't := }
+                   { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't := }
+		 if$
+	        }
+	        { bst.first.name.initial #0 =
+   	           { s nameptr "{vv~}{ll}{, ff}{, jj}" format.name$ 't := }
+   	           { s nameptr "{vv~}{ll}{, f.}{, jj}" format.name$ 't := }
+		 if$
+	        }
+	     if$
+	   }
+          if$
+        }
+      if$
+      nameptr #1 >
+        % 二番目以降の author のケースでの処理
+	{ namesleft #1 >
+   	    { s check.kanji.str
+ 		{ bst.and.jp  * t * }
+ 		{ ", " * t * }
+	      if$
+	    }
+	    { t "others" =
+  		{ s check.kanji.str
+  		    { bst.and.others.jp * }
+                    { bst.and.others * }
+ 		  if$
+ 		}
+    		{ s check.kanji.str
+ 		    { bst.and.jp * t * }
+		    { numnames #2 =
+  			{ bst.and * t * }
+  			{ bst.ands * t * }
+		      if$
+		    }
+ 		   if$
+ 		}
+	      if$
+	    }
+	  if$
+	}
+	't
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+}
+
 FUNCTION {format.editors.x}
 { editor empty$
     { "" }
-    { editor format.names
+    { editor format.names.ed
       editor num.names$ #1 >
  	{ editor check.kanji.str
- 	    { bst.editor.jp * }
-	    { bst.editors * }
+ 	    { " " * bst.editor.jp * }
+	    { " " * bst.editors * "," * }
 	  if$
  	}
  	{ editor check.kanji.str
- 	    { bst.editor.jp * }
-	    { bst.editor * }
+ 	    { " " * bst.editor.jp * }
+	    { " " * bst.editor * "," * }
 	  if$
  	}
       if$
@@ -3030,7 +3193,7 @@ FUNCTION {format.pages2}
     { "" }
     { is.kanji.entry
         { pages multi.page.check
-          { bst.incpage.pre.jp pages n.dashify * bst.incpage.post.jp * }
+          { bst.incpages.pre.jp pages n.dashify * bst.incpage.post.jp * }
           { bst.incpage.pre.jp pages * bst.incpage.post.jp * }
          if$
         }
@@ -3226,16 +3389,16 @@ FUNCTION {format.howpublished}
 }
 
 %%% address の整形。
-FUNCTION {format.address}
-{ address empty$
-    { "" }
-    { is.kanji.entry
-        { bst.address.pre.jp address * bst.address.post.jp * }
-        { bst.address.pre address * bst.address.post * }
-      if$
-    }
-  if$
-}
+% FUNCTION {format.address}
+% { address empty$
+%     { "" }
+%     { is.kanji.entry
+%         { bst.address.pre.jp address * bst.address.post.jp * }
+%         { bst.address.pre address * bst.address.post * }
+%       if$
+%     }
+%   if$
+% }
 
 %%% publisher の整形。
 FUNCTION {format.publisher}
@@ -3263,22 +3426,22 @@ FUNCTION {format.organization}
 
 %% publisher と address を出力する関数
 FUNCTION {output.publisher.address}
-{ address empty$
+% { address empty$
     { format.publisher "publisher" output.check.nocomma }
     % 日本語、英語で publisher と address の順序が逆
-    { is.kanji.entry
-			{ format.publisher "publisher" output.check.nocomma
-	  		format.address output.nocomma }
-			{ format.address output.nocomma
-	  		format.publisher "publisher" output.check.nocomma }
-    if$
-    }
-  if$
-}
+%     { is.kanji.entry
+% 			{ format.publisher "publisher" output.check.nocomma
+% 	  		format.address output.nocomma }
+% 			{ format.address output.nocomma
+% 	  		format.publisher "publisher" output.check.nocomma }
+%     if$
+%     }
+%   if$
+% }
 
 %% address, organization, publisher を出力する関数
 FUNCTION {output.address.organization.publisher}
-{ address empty$
+% { address empty$
     %% address is empty
     { organization empty$
         %% organization is empty
@@ -3296,43 +3459,43 @@ FUNCTION {output.address.organization.publisher}
         }
      if$
     }
-    %% address is not empty
-    { organization empty$
-        %% organization is empty
-        { publisher empty$
-	    %% publisher is empty
-	    { format.address output.nocomma }
-	    %% publisher is not empty
-	    { is.kanji.entry
-	        { format.publisher "publisher" output.check.nocomma
-		  format.address output.nocomma }
-		{ format.address output.nocomma
-		  format.publisher "publisher" output.check.nocomma }
-	      if$
-	    }
-	 if$
-        }
-        %% organization is not empty
-        { publisher empty$
-	    %% publisher is empty
-	    { format.organization "organization" output.check.nocomma
-	      format.address output.nocomma }
-	    %% publisher is not empty
-	    { is.kanji.entry
-	        { format.organization "organization" output.check.nocomma
-		  format.publisher "publisher" output.check.nocomma
-		  format.address output.nocomma }
-		{ format.organization "organization" output.check.nocomma
-		  format.address output.nocomma
-		  format.publisher "publisher" output.check.nocomma }
-	      if$
-	    }
-	 if$
-        }
-     if$
-    }
-  if$
-}
+%     %% address is not empty
+%     { organization empty$
+%         %% organization is empty
+%         { publisher empty$
+% 	    %% publisher is empty
+% 	    { format.address output.nocomma }
+% 	    %% publisher is not empty
+% 	    { is.kanji.entry
+% 	        { format.publisher "publisher" output.check.nocomma
+% 		  format.address output.nocomma }
+% 		{ format.address output.nocomma
+% 		  format.publisher "publisher" output.check.nocomma }
+% 	      if$
+% 	    }
+% 	 if$
+%         }
+%         %% organization is not empty
+%         { publisher empty$
+% 	    %% publisher is empty
+% 	    { format.organization "organization" output.check.nocomma
+% 	      format.address output.nocomma }
+% 	    %% publisher is not empty
+% 	    { is.kanji.entry
+% 	        { format.organization "organization" output.check.nocomma
+% 		  format.publisher "publisher" output.check.nocomma
+% 		  format.address output.nocomma }
+% 		{ format.organization "organization" output.check.nocomma
+% 		  format.address output.nocomma
+% 		  format.publisher "publisher" output.check.nocomma }
+% 	      if$
+% 	    }
+% 	 if$
+%         }
+%      if$
+%     }
+%   if$
+% }
 
 %%% misc 用
 FUNCTION {empty.misc.check}
@@ -3414,24 +3577,26 @@ FUNCTION {format.hoyakusho}
   and and and and and 
     { "" }
     {
-      is.kanji.entry
-        { bst.touten.jp }
-        { "." }
-      if$
+      % is.kanji.entry
+      %   { bst.touten.jp * "\\" }
+      %   { "." * "\\" }
+      % if$
+      "\\"
 
       bst.hoyakusho.pre.jp *
 			bst.genchoKANA.pre.jp * genchoKANA format.names * bst.genchoKANA.post.jp *
 
-      jauthor empty$
-        { jkanyaku empty$
+
+      jkanyaku empty$
+        { jauthor empty$
             { "" * }
-            { "" * jkanyaku format.names * "(監訳)" * }
+            { jauthor format.names * "（訳）" * }
           if$
         }
-        { jauthor format.names * "(訳)" *
-          jkanyaku empty$
+        { "" * jkanyaku format.names * "（監訳）" *
+          jauthor empty$
             { "" * }
-            { bst.touten.jp * jkanyaku format.names * "監訳" * }
+            { bst.touten.jp * jauthor format.names * "（訳）" * }
           if$
         }
       if$
@@ -3629,7 +3794,12 @@ FUNCTION {article}
 
   format.url.doi output.nocomma
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3647,13 +3817,13 @@ FUNCTION {book}
     'skip$
   if$
   format.book "title" output.check.nocomma
+  format.edition output.nocomma
 
   format.translator output.nocomma
   format.bvolume output.nocomma
   format.number.series output.nocomma
   output.publisher.address
 
-  format.edition output.nocomma
   format.book.pages output.nocomma
 
   bst.year.position #0 = not
@@ -3681,7 +3851,12 @@ FUNCTION {booklet}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3714,7 +3889,12 @@ FUNCTION {inbook}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3732,7 +3912,7 @@ FUNCTION {incollection}
   format.bvolume output.nocomma
 
 	% publisherの前におく
-	"(" * format.edition output.nocomma
+	" (" * format.edition output.nocomma
 
 	format.chapter.pages * ")" output.nocomma
 
@@ -3775,7 +3955,12 @@ FUNCTION {inproceedings}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3822,7 +4007,12 @@ FUNCTION {manual}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3847,7 +4037,12 @@ FUNCTION {mastersthesis}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3872,7 +4067,13 @@ FUNCTION {misc}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
+
   empty.misc.check
 }
 
@@ -3898,7 +4099,13 @@ FUNCTION {online}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
+
   empty.misc.check
 }
 
@@ -3928,7 +4135,12 @@ FUNCTION {phdthesis}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3956,7 +4168,12 @@ FUNCTION {proceedings}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3982,7 +4199,12 @@ FUNCTION {techreport}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4008,7 +4230,12 @@ FUNCTION {unpublished}
   format.url.doi output.nocomma
 
   format.note output.nocomma
-  fin.entry
+  % fin.entry
+
+  format.url.doi "" =
+    {fin.entry}
+    {fin.entry.no.period}
+  if$
 }
 
 FUNCTION {default.type}
