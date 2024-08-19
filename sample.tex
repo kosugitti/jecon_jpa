@@ -1,12 +1,29 @@
-\documentclass[uplatex]{jsarticle}
-\usepackage[longnamesfirst]{natbib}
+\documentclass[dvipdfmx]{jsarticle}
+
+\usepackage{hyperref}
+
+\usepackage{natbib}
 \usepackage[utf8]{inputenc} 
 \renewcommand{\refname}{引用文献}
+\setlength{\bibhang}{2em} % 同じ文献2行目以降のインデントの大きさ
+
 \begin{document}
 \title{心理学的な引用の仕方}
+\author{}
+
 \maketitle
 
-例えば文中の引用であれば，\citet{越智2013}のような形にし，文末の引用であれば次のように書くことになる\citep{Blechman1990}。
+
+
+例えば文中の引用であれば，\citet{Fukaya2011a}のような形にし，文末の引用であれば次のように書くことになる \citep{Hayashi2015}。
+
+2人以下のケース \citep{Ishii2016}
+
+3人以上のケース \citep{Ishii2017}
+
+% \nobibliography*
+
+翻訳書など \verb+\citep+ では正しく出ない場合は次のように手動で書く (Whiston, 2013 石川・佐藤・高橋監訳 2018) \nocite{Whiston2013}
 
 \bibliographystyle{jecon_jpa}
 \bibliography{sample}
